@@ -1,11 +1,11 @@
 <div class="panel" [class.comrade__background]="isComrade">
-    <h3 class="panel__title" [class.comrade__text]="isComrade">Add new account</h3>
+    <h3 class="panel__title" [class.comrade__text]="isComrade">새 계정 추가</h3>
 
     <div class="panel__content">
-        <h2 class="comrade__title" *ngIf="isComrade">Welcome Comrade!</h2>
+        <h2 class="comrade__title" *ngIf="isComrade">동무를 열렬히 환영합니다!</h2>
         <form (ngSubmit)="onSubmit()">
-            <label [class.comrade__text]="isComrade">Please provide your <span *ngIf="isComrade">comrade</span>
-                instance:</label>
+            <label *ngIf="isComrade">여기에 동무의 봉사기 주소를 입력해 주시요:</label>
+            <label *ngIf="!isComrade">여기에 인스턴스 주소를 입력해 주세요:</label>
 
             <div>
                 <input type="text" class="form-control form-control-sm form-with-button"
@@ -13,7 +13,7 @@
                     placeholder="mastodon.social" />
                 
                 <button type="submit" class="form-button"
-                    title="add account"
+                    title="계정 추가"
                     [class.comrade__button]="isComrade">
                     <span *ngIf="!isLoading">Submit</span>
                     <app-waiting-animation *ngIf="isLoading" class="waiting-icon"></app-waiting-animation>

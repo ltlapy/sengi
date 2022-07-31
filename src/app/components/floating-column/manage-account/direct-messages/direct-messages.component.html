@@ -1,7 +1,7 @@
 <div class="stream-toots flexcroll" #statusstream (scroll)="onScroll()">
     <div class="stream-toots__remove-cw" *ngIf="isThread && hasContentWarnings">
-        <button class="stream-toots__remove-cw--button" (click)="removeCw()" title="remove content warnings">Remove
-            CWs</button>
+        <button class="stream-toots__remove-cw--button" (click)="removeCw()" title="remove content warnings">열람주의
+            지우기</button>
     </div>
     <div *ngIf="displayError" class="stream-toots__error">{{displayError}}</div>
 
@@ -9,7 +9,7 @@
     <div class="stream-toots__status" *ngFor="let conversationWrapper of conversations">
         <div class="conversation__participants" title="participants">
             <fa-icon [icon]="faUserFriends" class="conversation__icon"></fa-icon>
-            <img class="conversation__avatar" src="{{ conversationWrapper.userAvatar }}" title="me" />
+            <img class="conversation__avatar" src="{{ conversationWrapper.userAvatar }}" title="나" />
             <div *ngFor="let acc of conversationWrapper.conversation.accounts">
                 <img class="conversation__avatar" src="{{ acc.avatar }}" title="{{ acc.acct }}" />
             </div>

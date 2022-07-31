@@ -7,7 +7,7 @@
             <a href class="stream__link" title="{{notification.account.acct}}"
                 (click)="openAccount(notification.account)" (auxclick)="openUrl(notification.account.url)"
                 innerHTML="{{ notification.account | accountEmoji }}"></a>
-            submitted a follow request
+            님이 팔로우를 요청했습니다
         </div>
 
         <a href (click)="openAccount(notification.account)" (auxclick)="openUrl(notification.account.url)"
@@ -38,8 +38,7 @@
             <a href class="stream__link" title="{{notification.account.acct}}"
                 (click)="openAccount(notification.account)" (auxclick)="openUrl(notification.account.url)"
                 innerHTML="{{ notification.account | accountEmoji }}"></a>
-            followed
-            you!
+            님이 나를 팔로우 했습니다
         </div>
 
         <a href (click)="openAccount(notification.account)" (auxclick)="openUrl(notification.account.url)"
@@ -58,7 +57,7 @@
             <a href class="stream__link" title="{{notification.account.acct}}"
                 (click)="openAccount(notification.account)" (auxclick)="openUrl(notification.account.url)"
                 innerHTML="{{ notification.account | accountEmoji }}"></a>
-            migrated to
+            님이 계정을 옮겼습니다
         </div>
 
         <a href (click)="openAccount(notification.target)" (auxclick)="openUrl(notification.target.url)"

@@ -1,6 +1,6 @@
 <div class="scheduled-status">
     <div class="scheduled-status__date">
-        {{ status.scheduled_at | date: 'MMM d, y, h:mm a' }}
+        {{ status.scheduled_at | date: 'yyyy-MM-dd a h:mm' }}
     </div>
 
 
@@ -10,37 +10,37 @@
 
     <div class="scheduled-status__content">
         <div class="scheduled-status__content--text scheduled-status__content--spoiler"
-            *ngIf="status.params.spoiler_text" title="spoiler">
+            *ngIf="status.params.spoiler_text" title="열람주의">
             {{ status.params.spoiler_text }}
         </div>
-        <div class="scheduled-status__content--text" title="status text">
+        <div class="scheduled-status__content--text" title="본문">
             {{ status.params.text }}
         </div>
     </div>
 
     <div class="scheduled-status__edition">
         <div *ngIf="!deleting && !rescheduling">
-            <button class="scheduled-status__edition--button" (click)="delete()" title="delete status">Delete</button>
+            <button class="scheduled-status__edition--button" (click)="delete()" title="delete status">삭제</button>
             <button class="scheduled-status__edition--button" (click)="reschedule()"
-                title="reschedule status">Reschedule</button>
+                title="reschedule status">수정</button>
         </div>
 
         <div *ngIf="deleting">
-            <button class="scheduled-status__edition--button" (click)="cancelDeletion()" title="cancel">CANCEL</button>
+            <button class="scheduled-status__edition--button" (click)="cancelDeletion()" title="cancel">유지하기</button>
             <button class="scheduled-status__edition--button scheduled-status__edition--delete"
-                (click)="confirmDeletion()" title="confirm status deletion">DO IT</button>
+                (click)="confirmDeletion()" title="confirm status deletion">삭제</button>
 
             <div class="scheduled-status__edition--label">
-                Delete the status?
+                예약 게시물을 삭제하시겠습니까?
             </div>
         </div>
 
         <div *ngIf="rescheduling">
             <app-status-scheduler [scheduledDate]="status.scheduled_at" class="scheduled-status__edition--scheduler" #statusScheduler></app-status-scheduler>
 
-            <button class="scheduled-status__edition--button" (click)="cancelReschedule()" title="cancel">CANCEL</button>
+            <button class="scheduled-status__edition--button" (click)="cancelReschedule()" title="cancel">취소</button>
             <button class="scheduled-status__edition--button"
-                (click)="confirmReschedule()" title="confirm rescheduling">REPLAN</button>
+                (click)="confirmReschedule()" title="confirm rescheduling">수정</button>
 
         </div>
 

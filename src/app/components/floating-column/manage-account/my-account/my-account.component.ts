@@ -90,10 +90,10 @@ export class MyAccountComponent implements OnInit, OnDestroy {
     private loadStreams(account: AccountWrapper){
         const instance = account.info.instance;
         this.availableStreams.length = 0;
-        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.global, 'Federated Timeline', account.info.id, null, null, null, instance)));
-        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.local, 'Local Timeline', account.info.id, null, null, null, instance)));
-        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.personnal, 'Home', account.info.id, null, null, null, instance)));
-        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.activity, 'Notifications', account.info.id, null, null, null, instance)));
+        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.global, '연합 타임라인', account.info.id, null, null, null, instance)));
+        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.local, '로컬 타임라인', account.info.id, null, null, null, instance)));
+        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.personnal, '홈', account.info.id, null, null, null, instance)));
+        this.availableStreams.push(new StreamWrapper(new StreamElement(StreamTypeEnum.activity, '알림', account.info.id, null, null, null, instance)));
 
         const loadedStreams = <StreamElement[]>this.store.snapshot().streamsstatemodel.streams;
         this.availableStreams.forEach(s => {

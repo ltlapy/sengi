@@ -1,7 +1,7 @@
 <div class="my-account__body flexcroll">
-    <h4 class="my-account__label">add timeline:</h4>
+    <h4 class="my-account__label">타임라인 추가:</h4>
     <div class="my-account__link--margin-bottom" *ngFor="let stream of availableStreams">
-        <a href *ngIf="stream.isAdded" class="my-account__list--button" title="remove timeline" (click)="removeStream(stream)">
+        <a href *ngIf="stream.isAdded" class="my-account__list--button" title="타임라인 제거" (click)="removeStream(stream)">
             <fa-icon class="my-account__link--icon my-account__link--remove" [icon]="faTimes"></fa-icon>
         </a>
         <a href class="my-account__link my-account__link--margin-bottom my-account__blue" (click)="addStream(stream)"
@@ -12,26 +12,26 @@
     </div>
 
 
-    <h4 class="my-account__label my-account__margin-top">manage list:</h4>
+    <h4 class="my-account__label my-account__margin-top">리스트 관리:</h4>
     <div class="my-account__link--margin-bottom" *ngFor="let list of availableLists">
-        <a href class="my-account__list--button" title="delete list" (click)="openCloseDeleteConfirmation(list, true)"
+        <a href class="my-account__list--button" title="리스트 삭제" (click)="openCloseDeleteConfirmation(list, true)"
             *ngIf="!list.confirmDeletion">
             <fa-icon class="my-account__link--icon" [icon]="faTrash"></fa-icon>
         </a>
-        <a href class="my-account__list--button" title="edit list" (click)="editList(list)"
+        <a href class="my-account__list--button" title="리스트 수정" (click)="editList(list)"
             *ngIf="!list.confirmDeletion">
             <fa-icon class="my-account__link--icon" [icon]="faPenAlt"></fa-icon>
         </a>
 
-        <a href class="my-account__list--button" title="cancel" (click)="openCloseDeleteConfirmation(list, false)"
+        <a href class="my-account__list--button" title="취소" (click)="openCloseDeleteConfirmation(list, false)"
             *ngIf="list.confirmDeletion">
             <fa-icon class="my-account__link--icon" [icon]="faTimes"></fa-icon>
         </a>
-        <a href class="my-account__list--button my-account__red" title="delete list" (click)="deleteList(list)"
+        <a href class="my-account__list--button my-account__red" title="리스트 삭제" (click)="deleteList(list)"
             *ngIf="list.confirmDeletion">
             <fa-icon class="my-account__link--icon" [icon]="faCheck"></fa-icon>
         </a>
-        <a href *ngIf="list.isAdded" class="my-account__list--button" title="remove list" (click)="removeStream(list)">
+        <a href *ngIf="list.isAdded" class="my-account__list--button" title="리스트 삭제" (click)="removeStream(list)">
             <fa-icon class="my-account__link--icon my-account__list--remove" [icon]="faTimes"></fa-icon>
         </a>
         <a class="my-account__link my-account__list my-account__blue" href (click)="addStream(list)"
@@ -41,30 +41,30 @@
 
         <app-list-editor *ngIf="list.editList" [list]="list" [account]="account"></app-list-editor>
     </div>
-    <a href class="my-account__list--button" title="create list" (click)="createList()">
+    <a href class="my-account__list--button" title="리스트 생성" (click)="createList()">
         <fa-icon class="my-account__link--icon" [icon]="faPlus"></fa-icon>
     </a>
-    <input class="my-account__list--new-list-title" placeholder="new list title" [(ngModel)]="listTitle"
+    <input class="my-account__list--new-list-title" placeholder="새 리스트 제목" [(ngModel)]="listTitle"
         (keyup.enter)="createList()" [disabled]="creationLoading" />
 
-    <h4 class="my-account__label my-account__margin-top">advanced settings:</h4>
+    <h4 class="my-account__label my-account__margin-top">고급 설정:</h4>
     <div class="advanced-settings">
         <input class="advanced-settings__checkbox" [(ngModel)]="avatarNotificationDisabled"
             (change)="onDisableAvatarNotificationChanged()" type="checkbox" name="avatarNotification"
             value="avatarNotification" id="avatarNotification"> <label class="noselect advanced-settings__label"
-            for="avatarNotification">disable avatar notifications</label><br>
+            for="avatarNotification">이 계정의 알림 끄기</label><br>
         <input class="advanced-settings__checkbox" [(ngModel)]="customStatusLengthEnabled"
             (change)="onCustomLengthEnabledChanged()" type="checkbox" name="customCharLength" value="customCharLength"
-            id="customCharLength"> <label class="noselect advanced-settings__label" for="customCharLength">custom char
-            limit</label><br>
-        <p *ngIf="customStatusLengthEnabled" class="advanced-settings__text">use this only if your instance doesn't
-            support status custom length detection (i.e. not a Pleroma or glitch-soc instance)</p>
+            id="customCharLength"> <label class="noselect advanced-settings__label" for="customCharLength">글자수 제한을
+            수정하기</label><br>
+        <p *ngIf="customStatusLengthEnabled" class="advanced-settings__text">인스턴스의 글자수 제한이 정상적으로
+            적용되지 않는 경우에만 사용하세요.</p>
         <input *ngIf="customStatusLengthEnabled" [(ngModel)]="customStatusLength"
             class="themed-form advanced-settings__input" type="number" (keyup)="customStatusLengthChanged($event)" />
     </div>
 
-    <h4 class="my-account__label my-account__margin-top">remove account from sengi:</h4>
+    <h4 class="my-account__label my-account__margin-top">sengi에서 로그아웃:</h4>
     <a class="my-account__link my-account__red" href (click)="removeAccount()">
-        Delete
+        로그아웃
     </a>
 </div>

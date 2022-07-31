@@ -23,15 +23,15 @@ export class PollEditorComponent implements OnInit {
         this.entries.push(new PollEntry(this.getEntryUuid(), this.multiSelected));
         this.entries.push(new PollEntry(this.getEntryUuid(), this.multiSelected));
 
-        this.delayChoice.push(new Delay(60 * 5, "5 minutes"));
-        this.delayChoice.push(new Delay(60 * 30, "30 minutes"));
-        this.delayChoice.push(new Delay(60 * 60, "1 hour"));
-        this.delayChoice.push(new Delay(60 * 60 * 6, "6 hours"));
-        this.delayChoice.push(new Delay(60 * 60 * 24, "1 day"));
-        this.delayChoice.push(new Delay(60 * 60 * 24 * 3, "3 days"));
-        this.delayChoice.push(new Delay(60 * 60 * 24 * 7, "7 days"));
-        this.delayChoice.push(new Delay(60 * 60 * 24 * 15, "15 days"));
-        this.delayChoice.push(new Delay(60 * 60 * 24 * 30, "30 days"));
+        this.delayChoice.push(new Delay(60 * 5, "5 분"));
+        this.delayChoice.push(new Delay(60 * 30, "30 분"));
+        this.delayChoice.push(new Delay(60 * 60, "1 시간"));
+        this.delayChoice.push(new Delay(60 * 60 * 6, "6 시간"));
+        this.delayChoice.push(new Delay(60 * 60 * 24, "1 일"));
+        this.delayChoice.push(new Delay(60 * 60 * 24 * 3, "3 일"));
+        this.delayChoice.push(new Delay(60 * 60 * 24 * 7, "7 일"));
+        this.delayChoice.push(new Delay(60 * 60 * 24 * 15, "15 일"));
+        this.delayChoice.push(new Delay(60 * 60 * 24 * 30, "30 일"));
 
         this.selectedId = this.delayChoice[4].id;
     }

@@ -14,7 +14,7 @@ import { NotificationService } from '../../../services/notification.service';
 })
 export class AddNewAccountComponent implements OnInit {
     private blockList = ['gab.com', 'gab.ai', 'cyzed.com'];
-    private comradeList = ['juche.town'];
+    private comradeList = ['juche.town', 'toyoko.in'];
 
     isComrade: boolean;
     isLoading: boolean;
@@ -72,9 +72,9 @@ export class AddNewAccountComponent implements OnInit {
                 if (err instanceof HttpErrorResponse) {
                     this.notificationService.notifyHttpError(err, null);
                 } else if ((<Error>err).message === 'CORS') {
-                    this.notificationService.notify(null, null, 'Connection Error. It\'s usually a CORS issue with the server you\'re connecting to. Please check in the console and if so, contact your administrator with those informations.', true);
+                    this.notificationService.notify(null, null, '접속할 수 없습니다. 인스턴스의 CORS 문제일 수 있으며, 이 상태가 지속된다면 브라우저의 디버그 콘솔에 표시되는 정보와 함께 인스턴스 관리자에게 문의해 주세요.', true);
                 } else {
-                    this.notificationService.notify(null, null, 'Unkown error', true);
+                    this.notificationService.notify(null, null, '알 수 없는 오류입니다.', true);
                 }
             });
 

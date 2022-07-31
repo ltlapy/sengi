@@ -2,34 +2,34 @@
     <h3 class="panel__title">Manage Account</h3>
 
     <div class="account__header">
-        <a href (click)="browseLocalAccount()" (auxclick)="openLocalAccount()" title="open {{ account.info.id }}">
+        <a href (click)="browseLocalAccount()" (auxclick)="openLocalAccount()" title="{{ account.info.id }} 열기">
             <img class="account__avatar" src="{{account.avatar}}" />
         </a>
 
         <!-- <a href class="account__header--button"><fa-icon [icon]="faUserPlus"></fa-icon></a> -->
-        <a *ngIf="isBookmarksAvailable" href class="account__header--button" title="bookmark"
+        <a *ngIf="isBookmarksAvailable" href class="account__header--button" title="북마크"
             (click)="loadSubPanel('bookmarks')"
             [ngClass]="{ 'account__header--button--selected': subPanel === 'bookmarks' }">
             <fa-icon [icon]="faBookmark"></fa-icon>
         </a>
 
-        <a href class="account__header--button" title="favorites" (click)="loadSubPanel('favorites')"
+        <a href class="account__header--button" title="좋아요한 게시물" (click)="loadSubPanel('favorites')"
             [ngClass]="{ 'account__header--button--selected': subPanel === 'favorites' }">
             <fa-icon [icon]="faStar"></fa-icon>
         </a>
-        <a href class="account__header--button" title="DM" (click)="loadSubPanel('dm')"
+        <a href class="account__header--button" title="다이렉트 메시지" (click)="loadSubPanel('dm')"
             [ngClass]="{ 'account__header--button--selected': subPanel === 'dm' }">
             <fa-icon [icon]="faEnvelope"></fa-icon>
         </a>
-        <a href class="account__header--button" title="mentions" (click)="loadSubPanel('mentions')"
+        <a href class="account__header--button" title="멘션" (click)="loadSubPanel('mentions')"
             [ngClass]="{ 'account__header--button--selected': subPanel === 'mentions', 'account__header--button--notification': hasMentions }">
             <fa-icon [icon]="faAt"></fa-icon>
         </a>
-        <a href class="account__header--button" title="notifications" (click)="loadSubPanel('notifications')" [ngClass]="{ 'account__header--button--selected': subPanel === 'notifications', 
+        <a href class="account__header--button" title="알림" (click)="loadSubPanel('notifications')" [ngClass]="{ 'account__header--button--selected': subPanel === 'notifications', 
             'account__header--button--notification': hasNotifications }">
             <fa-icon [icon]="faBell"></fa-icon>
         </a>
-        <a href class="account__header--button" title="account" (click)="loadSubPanel('account')"
+        <a href class="account__header--button" title="계정" (click)="loadSubPanel('account')"
             [ngClass]="{ 'account__header--button--selected': subPanel === 'account' }">
             <fa-icon [icon]="faUser"></fa-icon>
         </a>

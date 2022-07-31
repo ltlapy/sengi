@@ -2,14 +2,14 @@
     <div class="reblog" *ngIf="reblog">
         <a class="reblog__profile-link" href title="{{ status.account.acct }}" 
             (click)="openAccount(status.account)"
-            (auxclick)="openUrl(status.account.url)"><span innerHTML="{{ status.account | accountEmoji }}"></span> <img *ngIf="reblog" class="reblog__avatar" src="{{ status.account.avatar | ensureHttps }}" /></a> boosted
+            (auxclick)="openUrl(status.account.url)"><span innerHTML="{{ status.account | accountEmoji }}"></span> <img *ngIf="reblog" class="reblog__avatar" src="{{ status.account.avatar | ensureHttps }}" /></a> 님이 부스트 했습니다
     </div>
     <div *ngIf="statusWrapper.status.pinned && !notificationType" class="pinned">
         <div class="notification--icon">
             <fa-icon class="pinned__icon" [icon]="faThumbtack"></fa-icon>
         </div>
         <div class="notification--label pinned__label">
-            Pinned
+            고정된 게시물
         </div>
     </div>
     <div *ngIf="notificationType === 'favourite'">
@@ -20,7 +20,7 @@
             <a href class="notification--link" title="{{ notificationAccount.acct }}" 
                 (click)="openAccount(notificationAccount)"
                 (auxclick)="openUrl(notificationAccount.url)" innerHTML="{{ notificationAccount  | accountEmoji }}"></a>
-            favorited your status
+            님이 내 게시물을 마음에 들어합니다
         </div>
     </div>
     <div *ngIf="notificationType === 'reblog'">
@@ -31,7 +31,7 @@
             <a href class="notification--link" title="{{ notificationAccount.acct }}" 
                 (click)="openAccount(notificationAccount)"
                 (auxclick)="openUrl(notificationAccount.url)" innerHTML="{{ notificationAccount | accountEmoji }}"></a>
-            boosted your status
+            님이 부스트 했습니다
         </div>
     </div>
     <div *ngIf="notificationType === 'poll'">
@@ -39,11 +39,11 @@
             <fa-icon class="boost" [icon]="faList"></fa-icon>
         </div>
         <div class="notification--label">
-            A poll you have voted in has ended
+            참여한 투표가 종료되었습니다
         </div>
     </div>
     <div class="status">
-        <a href class="status__navigation" title="open status" (click)="textSelected()">
+        <a href class="status__navigation" title="게시물 열기" (click)="textSelected()">
 
         </a>
         <div [ngClass]="{'notification--status': notificationAccount }">
@@ -65,25 +65,25 @@
                 </a>
             </div>
             <div class="status__labels">
-                <div class="status__labels--label status__labels--bot" title="bot" *ngIf="displayedStatus.account.bot">
-                    bot
+                <div class="status__labels--label status__labels--bot" title="봇" *ngIf="displayedStatus.account.bot">
+                    봇
                 </div>
-                <div class="status__labels--label status__labels--xpost" title="this status was cross-posted"
+                <div class="status__labels--label status__labels--xpost" title="크로스포스터를 통해 작성되었습니다"
                     *ngIf="isCrossPoster">
-                    x-post
+                    크로스포스팅
                 </div>
-                <div class="status__labels--label status__labels--thread" title="thread" *ngIf="isThread">
-                    thread
+                <div class="status__labels--label status__labels--thread" title="글타래" *ngIf="isThread">
+                    글타래
                 </div>
-                <div class="status__labels--label status__labels--discuss" title="this status has a discussion"
+                <div class="status__labels--label status__labels--discuss" title="답글이 있습니다"
                     *ngIf="hasReply">
-                    replies
+                    답글
                 </div>
-                <div class="status__labels--label status__labels--old" title="this status is old" *ngIf="isOld && !statusWrapper.status.pinned">
-                    old
+                <div class="status__labels--label status__labels--old" title="오래된 게시물입니다" *ngIf="isOld && !statusWrapper.status.pinned">
+                    오래됨
                 </div>
-                <div class="status__labels--label status__labels--remote" title="this status isn't federated with this instance" *ngIf="isRemote">
-                    remote
+                <div class="status__labels--label status__labels--remote" title="현재 인스턴스에 연합되지 않은 게시물입니다" *ngIf="isRemote">
+                    리모트
                 </div>
             </div>
 
