@@ -1,36 +1,36 @@
 <div class="action-bar">
-    <a *ngIf="!isLocked" href class="action-bar__link action-bar__link--reply" title="Reply" (click)="reply()">
+    <a *ngIf="!isLocked" href class="action-bar__link action-bar__link--reply" title="답글 작성" (click)="reply()">
         <fa-icon [icon]="faReply"></fa-icon>
     </a>
-    <fa-icon *ngIf="isLocked" class="action-bar__lock" title="Account can't access this post" [icon]="faLock"></fa-icon>
+    <fa-icon *ngIf="isLocked" class="action-bar__lock" title="계정이 이 게시물에 접근할 수 없음" [icon]="faLock"></fa-icon>
 
-    <a *ngIf="!(isBoostLocked || isLocked)" href class="action-bar__link action-bar__link--boost" title="Boost"
+    <a *ngIf="!(isBoostLocked || isLocked)" href class="action-bar__link action-bar__link--boost" title="부스트"
         [class.boosted]="isBoosted" [class.boosting]="boostIsLoading" (click)="boost()">
         <fa-icon [icon]="faRetweet"></fa-icon>
     </a>
-    <fa-icon *ngIf="isBoostLocked && !isLocked && !isDM" class="action-bar__lock" title="This post cannot be boosted"
+    <fa-icon *ngIf="isBoostLocked && !isLocked && !isDM" class="action-bar__lock" title="부스트할 수 없는 게시물"
         [icon]="faLock"></fa-icon>
-    <fa-icon *ngIf="isLocked" class="action-bar__lock" title="Account can't access this post" [icon]="faLock"></fa-icon>
-    <fa-icon *ngIf="isDM && !isLocked" class="action-bar__envelope" title="DM post cannot be boosted"
+    <fa-icon *ngIf="isLocked" class="action-bar__lock" title="계정이 이 게시물에 접근할 수 없음" [icon]="faLock"></fa-icon>
+    <fa-icon *ngIf="isDM && !isLocked" class="action-bar__envelope" title="다이렉트 메시지는 부스트할 수 없음"
         [icon]="faEnvelope"></fa-icon>
 
-    <a *ngIf="!isLocked" href class="action-bar__link action-bar__link--fav" title="Favourite"
+    <a *ngIf="!isLocked" href class="action-bar__link action-bar__link--fav" title="좋아요"
         [class.favorited]="isFavorited" [class.favoriting]="favoriteIsLoading" (click)="favorite()">
         <fa-icon [icon]="faStar"></fa-icon>
     </a>
-    <fa-icon *ngIf="isLocked" class="action-bar__lock" title="Account can't access this post" [icon]="faLock"></fa-icon>
+    <fa-icon *ngIf="isLocked" class="action-bar__lock" title="계정이 이 게시물에 접근할 수 없음" [icon]="faLock"></fa-icon>
 
-    <a *ngIf="isBookmarksAvailable && !isLocked" href class="action-bar__link action-bar__link--bookmark" title="Bookmark"
+    <a *ngIf="isBookmarksAvailable && !isLocked" href class="action-bar__link action-bar__link--bookmark" title="북마크"
         [class.bookmarked]="isBookmarked" [class.favoriting]="bookmarkingIsLoading" (click)="bookmark()">
         <fa-icon [icon]="faBookmark"></fa-icon>
     </a>
-    <fa-icon *ngIf="isBookmarksAvailable && isLocked" class="action-bar__lock" title="Account can't access this post" [icon]="faLock"></fa-icon>
+    <fa-icon *ngIf="isBookmarksAvailable && isLocked" class="action-bar__lock" title="계정이 이 게시물에 접근할 수 없음" [icon]="faLock"></fa-icon>
 
-    <a href class="action-bar__link action-bar__link--cw" title="show content" (click)="showContent()"
+    <a href class="action-bar__link action-bar__link--cw" title="내용 보이기" (click)="showContent()"
         *ngIf="isContentWarningActive">
         <fa-icon [icon]="faWindowClose"></fa-icon>
     </a>
-    <a href class="action-bar__link action-bar__link--cw" title="hide content" (click)="hideContent()"
+    <a href class="action-bar__link action-bar__link--cw" title="내용 숨기기" (click)="hideContent()"
         *ngIf="!isContentWarningActive">
         <fa-icon [icon]="faWindowCloseRegular"></fa-icon>
     </a>

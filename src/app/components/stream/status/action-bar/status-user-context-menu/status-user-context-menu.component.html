@@ -1,49 +1,49 @@
 <a href class="context-menu-link" (click)="onContextMenu($event)" 
     [class.context-menu-link__status]="statusWrapper"
     [class.context-menu-link__profile]="displayedAccount"
-    title="More">
+    title="더 보기">
     <fa-icon [icon]="faEllipsisH"></fa-icon>
 </a>
 <context-menu #contextMenu>
     <ng-template contextMenuItem (execute)="expandStatus()" *ngIf="statusWrapper">
-        Expand status
+        상세 정보 표시
     </ng-template>
     <ng-template contextMenuItem (execute)="copyStatusLink()" *ngIf="statusWrapper">
-        Copy link to status
+        게시물 링크 복사
     </ng-template>
     <ng-template contextMenuItem (execute)="copyAllData()" *ngIf="statusWrapper">
-        Copy all data
+        게시물 데이터 복사
     </ng-template>
     <ng-template contextMenuItem divider="true" *ngIf="statusWrapper"></ng-template>
     <ng-template contextMenuItem (execute)="mentionAccount()" *ngIf="!isOwnerSelected">
-        Mention @{{ this.username }}
+        @{{ this.username }} 에게 글쓰기
     </ng-template>
     <ng-template contextMenuItem (execute)="dmAccount()" *ngIf="!isOwnerSelected">
-        Direct message @{{ this.username }}
+        @{{ this.username }} 에게 다이렉트 메시지
     </ng-template>
     <ng-template contextMenuItem (execute)="muteConversation()" *ngIf="statusWrapper && isOwnerSelected && !displayedStatus.muted">
-        Mute conversation
+        이 대화를 뮤트
     </ng-template>
     <ng-template contextMenuItem (execute)="unmuteConversation()" *ngIf="statusWrapper && isOwnerSelected && displayedStatus.muted">
-        Unmute conversation
+        이 대화를 뮤트 해제
     </ng-template>
     <ng-template contextMenuItem divider="true"></ng-template>
     <ng-template contextMenuItem (execute)="muteAccount()" *ngIf="!isOwnerSelected">
-        Mute @{{ this.username }}
+        @{{ this.username }} 뮤트
     </ng-template>
     <ng-template contextMenuItem (execute)="blockAccount()" *ngIf="!isOwnerSelected">
-        Block @{{ this.username }}
+        @{{ this.username }} 차단
     </ng-template>
     <ng-template contextMenuItem (execute)="pinOnProfile()" *ngIf="statusWrapper && isOwnerSelected && !displayedStatus.pinned && displayedStatus.visibility === 'public'">
-        Pin on profile
+        프로필에 고정
     </ng-template>
     <ng-template contextMenuItem (execute)="unpinFromProfile()" *ngIf="statusWrapper && isOwnerSelected && displayedStatus.pinned && displayedStatus.visibility === 'public'">
-        Unpin from profile
+        프로필에서 고정 해제
     </ng-template>
     <ng-template contextMenuItem (execute)="delete(false)" *ngIf="statusWrapper && isOwnerSelected">
-        Delete
+        삭제
     </ng-template>
     <ng-template contextMenuItem (execute)="delete(true)" *ngIf="statusWrapper && isOwnerSelected">
-        Delete & re-draft
+        지우고 다시 쓰기
     </ng-template>
 </context-menu>

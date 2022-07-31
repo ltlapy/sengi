@@ -6,7 +6,7 @@
 
         <!-- <div> -->
         <div class="stream-column__stream-header">
-            <a class="stream-column__stream-selector" href title="return to top" (click)="goToTop()">
+            <a class="stream-column__stream-selector" href title="맨 위로 이동" (click)="goToTop()">
                 <img *ngIf="timelineHeader === 3 || timelineHeader === 4" class="stream-column__stream-selector--avatar" src="{{avatar}}" />
                 <fa-icon class="stream-column__stream-selector--icon" [icon]="columnFaIcon"></fa-icon>
                 <span class="stream-column__stream-selector--text">
@@ -14,7 +14,7 @@
                     <span class="stream-column__stream-selector--subtitle" *ngIf="streamElement.instance && timelineHeader !== 4 && timelineHeader !== 5"><span *ngIf="timelineHeader === 2">{{account.username}}@</span>{{ streamElement.instance.toLowerCase() }}</span>
                 </span>
             </a>
-            <a class="stream-column__open-menu" href title="edit column" (click)="openEditionMenu()">
+            <a class="stream-column__open-menu" href title="컬럼 수정" (click)="openEditionMenu()">
                 <fa-icon class="stream-column__open-menu--icon" [icon]="menuFaIcon"></fa-icon>
             </a>
         </div>

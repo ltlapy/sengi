@@ -6,15 +6,15 @@
     </div>
     <div class="tutorial__footer">        
         <a href (click)="close()" 
-            title="close tutorial"
-            class="tutorial__footer--button tutorial__footer--button--close">close</a>
+            title="튜토리얼 끝내기"
+            class="tutorial__footer--button tutorial__footer--button--close">튜토리얼 끝내기</a>
         <a href (click)="previous()" 
-            title="previous"
+            title="이전"
             class="tutorial__footer--button tutorial__footer--button--navigate"
-            [class.tutorial__footer--button--disabled]="!previousAvailable">prev.</a>
+            [class.tutorial__footer--button--disabled]="!previousAvailable">이전</a>
         <a href (click)="next()" 
-            title="next"
+            title="닫기"
             class="tutorial__footer--button tutorial__footer--button--next"
-            [class.tutorial__footer--button--disabled]="!nextAvailable"><span *ngIf="!tutorialEnded">next</span><span *ngIf="tutorialEnded">close</span></a>
+            [class.tutorial__footer--button--disabled]="!nextAvailable"><span *ngIf="!tutorialEnded">next</span><span *ngIf="tutorialEnded">다음</span></a>
     </div>    
 </div>

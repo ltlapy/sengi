@@ -1,6 +1,6 @@
 <div class="content-wrapper">
     <div #content class="content" [class.selectable]="textIsSelectable" [class.collapsed]="isCollapsed" innerHTML="{{processedText}}" (click)="selectText($event)"></div>
     <div class="content-wrapper__expand" [class.content-wrapper__expand--selected]="selected" *ngIf="isCollapsed" (click)="selectText($event)">
-        <a href (click)="expand()" class="content-wrapper__expand--link" title="expand status">read more <fa-icon class="content-wrapper__expand--link--icon" [icon]="faAngleDown"></fa-icon></a>
+        <a href (click)="expand()" class="content-wrapper__expand--link" title="게시물 이어서 읽기">자세히 <fa-icon class="content-wrapper__expand--link--icon" [icon]="faAngleDown"></fa-icon></a>
     </div>
 </div>

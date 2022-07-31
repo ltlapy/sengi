@@ -1,6 +1,6 @@
 <div class="stream-toots">
     <div class="stream-toots__remove-cw" *ngIf="isThread && hasContentWarnings">
-        <a href class="stream-toots__remove-cw--button" (click)="removeCw()" title="remove content warnings">
+        <a href class="stream-toots__remove-cw--button" (click)="removeCw()" title="열람주의 제거">
             Remove CWs
         </a>
     </div>
@@ -12,7 +12,7 @@
         <div *ngIf="displayError" class="stream-toots__error">{{displayError}}</div>
 
         <div *ngIf="timelineLoadingMode === 3 && bufferStream && bufferStream.length > 0">
-            <a href (click)="loadBuffer()" class="stream-toots__load-buffer" title="load new items">{{ bufferStream.length }} new item<span *ngIf="bufferStream.length > 1">s</span></a>
+            <a href (click)="loadBuffer()" class="stream-toots__load-buffer" title="새 게시물 불러오기">{{ bufferStream.length }}건의 새 게시물<!--<span *ngIf="bufferStream.length > 1">s</span>--></a>
         </div>
 
         <div class="stream-toots__status" *ngFor="let statusWrapper of statuses" #status>

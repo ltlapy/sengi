@@ -33,13 +33,13 @@ export class TimeAgoPipe implements PipeTransform {
         // const years = days / 365;
 
         if (seconds <= 59) {
-            text = Math.round(seconds) + 's';
+            text = Math.round(seconds) + '초';
         } else if (minutes <= 59) {
-            text = Math.round(minutes) + 'm';
+            text = Math.round(minutes) + '분';
         } else if (hours <= 23) {
-            text = Math.round(hours) + 'h';
+            text = Math.round(hours) + '시간';
         } else {
-            text = Math.round(days) + 'd';
+            text = Math.round(days) + '일';
         }
 
         if (minutes < 1) {

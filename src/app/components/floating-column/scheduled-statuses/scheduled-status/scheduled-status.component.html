@@ -20,15 +20,15 @@
 
     <div class="scheduled-status__edition">
         <div *ngIf="!deleting && !rescheduling">
-            <button class="scheduled-status__edition--button" (click)="delete()" title="delete status">삭제</button>
+            <button class="scheduled-status__edition--button" (click)="delete()" title="삭제">삭제</button>
             <button class="scheduled-status__edition--button" (click)="reschedule()"
-                title="reschedule status">수정</button>
+                title="수정">수정</button>
         </div>
 
         <div *ngIf="deleting">
-            <button class="scheduled-status__edition--button" (click)="cancelDeletion()" title="cancel">유지하기</button>
+            <button class="scheduled-status__edition--button" (click)="cancelDeletion()" title="유지하기">유지하기</button>
             <button class="scheduled-status__edition--button scheduled-status__edition--delete"
-                (click)="confirmDeletion()" title="confirm status deletion">삭제</button>
+                (click)="confirmDeletion()" title="삭제">삭제</button>
 
             <div class="scheduled-status__edition--label">
                 예약 게시물을 삭제하시겠습니까?
@@ -38,9 +38,9 @@
         <div *ngIf="rescheduling">
             <app-status-scheduler [scheduledDate]="status.scheduled_at" class="scheduled-status__edition--scheduler" #statusScheduler></app-status-scheduler>
 
-            <button class="scheduled-status__edition--button" (click)="cancelReschedule()" title="cancel">취소</button>
+            <button class="scheduled-status__edition--button" (click)="cancelReschedule()" title="취소">취소</button>
             <button class="scheduled-status__edition--button"
-                (click)="confirmReschedule()" title="confirm rescheduling">수정</button>
+                (click)="confirmReschedule()" title="수정">수정</button>
 
         </div>
 

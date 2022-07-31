@@ -1,16 +1,16 @@
 <div class="media-viewer-canvas noselect">
     <div class="background__close" (click)="close()"></div>
 
-    <a href class="media-viewer-canvas__close media-viewer-canvas__button" title="close" (click)="close()">
+    <a href class="media-viewer-canvas__close media-viewer-canvas__button" title="닫기" (click)="close()">
         <fa-icon [icon]="faTimes"></fa-icon>
     </a>
 
-    <a href class="media-viewer-canvas__previous media-viewer-canvas__button" title="previous"
+    <a href class="media-viewer-canvas__previous media-viewer-canvas__button" title="이전 미디어"
         (click)="previous($event)" *ngIf="previousAvailable">
         <fa-icon [icon]="faAngleLeft"></fa-icon>
     </a>
 
-    <a href class="media-viewer-canvas__next media-viewer-canvas__button" title="next" (click)="next($event)"
+    <a href class="media-viewer-canvas__next media-viewer-canvas__button" title="다음 미디어" (click)="next($event)"
         *ngIf="nextAvailable">
         <fa-icon [icon]="faAngleRight"></fa-icon>
     </a>

@@ -90,7 +90,7 @@
 
             <!-- <div #content class="status__content" innerHTML="{{displayedStatus.content}}"></div> -->
 
-            <a href class="status__content-warning" *ngIf="isContentWarned" title="show content"
+            <a href class="status__content-warning" *ngIf="isContentWarned" title="열람주의 내용 보이기"
                 (click)="removeContentWarning()">
                 <span class="status__content-warning--title">sensitive content</span>
                 <span innerHTML="{{ contentWarningText }}"></span>

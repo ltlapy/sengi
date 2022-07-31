@@ -1,9 +1,9 @@
 <div class="hashtag-column">
     <div class="hashtag-header">
-        <a href (click)="goToTop()" class="hashtag-header__gototop" title="go to top">
+        <a href (click)="goToTop()" class="hashtag-header__gototop" title="맨 위로 이동">
             <h3 class="hashtag-header__title">#{{hashtagElement.tag}}</h3>
 
-            <button class="btn-custom-secondary hashtag-header__add-column" (click)="addColumn($event)" title="add column to board" [hidden]="columnAdded">add column</button>
+            <button class="btn-custom-secondary hashtag-header__add-column" (click)="addColumn($event)" title="컬럼으로 추가" [hidden]="columnAdded">add column</button>
         </a>
     </div>
     <app-stream-statuses #appStreamStatuses class="hashtag-stream" *ngIf="hashtagElement" 

@@ -2,31 +2,31 @@
     <div class="stream-edition__settings" *ngIf="!displayingNotifications">
         <div class="stream-edition__setting">
             <input [(ngModel)]="hideBoosts" (change)="settingsChanged()" class="stream-edition__setting--checkbox"
-                type="checkbox" id="hideBoosts"> <label for="hideBoosts" class="noselect">hide
-                boosts</label><br />
+                type="checkbox" id="hideBoosts"> <label for="hideBoosts" class="noselect">부스트
+                숨기기</label><br />
         </div>
         <div class="stream-edition__setting">
             <input [(ngModel)]="hideReplies" (change)="settingsChanged()" class="stream-edition__setting--checkbox"
-                type="checkbox" id="hideReplies"> <label for="hideReplies" class="noselect">hide
-                replies</label><br />
+                type="checkbox" id="hideReplies"> <label for="hideReplies" class="noselect">답글
+                숨기기</label><br />
         </div>
         <div class="stream-edition__setting">
             <input [(ngModel)]="hideBots" (change)="settingsChanged()" class="stream-edition__setting--checkbox"
-                type="checkbox" id="hideBots"> <label for="hideBots" class="noselect">hide
-                bots</label><br />
+                type="checkbox" id="hideBots"> <label for="hideBots" class="noselect">봇의 게시물
+                숨기기</label><br />
         </div>
     </div>
     <div>
-        <a href (click)="delete()" class="stream-edition__button stream-edition__button--delete" title="remove column">
-            <fa-icon [icon]="faTimes"></fa-icon> <span class="stream-edition__button--delete--label">remove</span>
+        <a href (click)="delete()" class="stream-edition__button stream-edition__button--delete" title="이 컬럼 제거">
+            <fa-icon [icon]="faTimes"></fa-icon> <span class="stream-edition__button--delete--label">제거</span>
         </a>
 
         <a href (click)="moveRight()"
             class="stream-edition__button stream-edition__button--move stream-edition__button--move--right"
-            title="move right">
+            title="오른쪽으로 이동">
             <fa-icon [icon]="faChevronRight"></fa-icon>
         </a>
-        <a href (click)="moveLeft()" class="stream-edition__button stream-edition__button--move" title="move left">
+        <a href (click)="moveLeft()" class="stream-edition__button stream-edition__button--move" title="왼쪽으로 이동">
             <fa-icon [icon]="faChevronLeft"></fa-icon>
         </a>
     </div>

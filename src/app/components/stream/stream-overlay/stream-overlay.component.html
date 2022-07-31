@@ -1,23 +1,23 @@
 <div class="overlay">
     <div class="overlay__header">
-        <a href class="overlay__button overlay-close" title="close" (click)="close()">
+        <a href class="overlay__button overlay-close" title="닫기" (click)="close()">
             <fa-icon class="overlay-close__icon" [icon]="faTimes"></fa-icon>
         </a>
 
         <a href class="overlay__button overlay-previous"
-            [ngClass]="{'overlay__button--focus': hasPreviousElements }" title="previous" (click)="previous()">
+            [ngClass]="{'overlay__button--focus': hasPreviousElements }" title="이전" (click)="previous()">
             <fa-icon class="overlay-previous__icon" [icon]="faAngleLeft"></fa-icon>
         </a>
         <a href class="overlay__button overlay-refresh" [ngClass]="{'overlay__button--focus': refreshFocused }"
-            title="refresh" (click)="refresh()">
+            title="새로고침" (click)="refresh()">
             <fa-icon class="overlay-refresh__icon" [icon]="faRedoAlt"></fa-icon>
         </a>
 
-        <a href title="return to top" class="overlay-gototop" (click)="goToTop()">            
+        <a href title="맨 위로 이동" class="overlay-gototop" (click)="goToTop()">            
         </a>
 
         <a href class="overlay__button overlay-next" [ngClass]="{'overlay__button--focus': hasNextElements }"
-            title="next" (click)="next()">
+            title="다음" (click)="next()">
             <fa-icon class="overlay-next__icon" [icon]="faAngleRight"></fa-icon>
         </a>
     </div>

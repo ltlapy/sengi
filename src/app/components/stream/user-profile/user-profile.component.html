@@ -4,7 +4,7 @@
             [ngStyle]="{'background-image':'url('+displayedAccount.header+')'}"
             [class.profile__floating-header__activated]="showFloatingHeader">
             <div class="profile__floating-header__inner">
-                <a href (click)="showAvatar(displayedAccount.avatar)" (auxclick)="openAccount()" title="open avatar">
+                <a href (click)="showAvatar(displayedAccount.avatar)" (auxclick)="openAccount()" title="프로필 사진 보이기">
                     <img class="profile__floating-header__avatar" [class.profile__disabled]="displayedAccount.moved"
                         src="{{displayedAccount.avatar}}" alt="header" />
                 </a>
@@ -13,7 +13,7 @@
                     <h2 class="profile__floating-header__names__display-name"
                         innerHTML="{{displayedAccount | accountEmoji }}" title="{{displayedAccount.display_name}}"></h2>
                     <a class="profile__floating-header__names__fullhandle" href="{{displayedAccount.url}}"
-                        target="_blank" title="{{displayedAccount.acct}}">@{{displayedAccount.acct}}</a> <fa-icon class="fa-lock" *ngIf="displayedAccount.locked" [icon]="faLock" title="account locked"></fa-icon>
+                        target="_blank" title="{{displayedAccount.acct}}">@{{displayedAccount.acct}}</a> <fa-icon class="fa-lock" *ngIf="displayedAccount.locked" [icon]="faLock" title="팔로우 승인제"></fa-icon>
                 </div>
 
                 <div class="profile__floating-header__follow" *ngIf="relationship && !displayedAccount.moved">
@@ -22,15 +22,15 @@
                     </app-waiting-animation>
 
                     <div *ngIf="!loadingRelationShip && !relationShipError">
-                        <a href class="profile-header__follow--button profile-header__follow--unfollowed" title="follow"
+                        <a href class="profile-header__follow--button profile-header__follow--unfollowed" title="이 계정을 팔로우"
                             (click)="follow()" *ngIf="!relationship.following && !relationship.requested">
                             <fa-icon [icon]="faUserRegular"></fa-icon>
                         </a>
-                        <a href class="profile-header__follow--button profile-header__follow--followed" title="unfollow"
+                        <a href class="profile-header__follow--button profile-header__follow--followed" title="이 계정을 팔로우 해제"
                             (click)="unfollow()" *ngIf="relationship.following">
                             <fa-icon [icon]="faUserCheck"></fa-icon>
                         </a>
-                        <a href class="profile-header__follow--button profile-header__follow--followed" title="pending"
+                        <a href class="profile-header__follow--button profile-header__follow--followed" title="팔로우 요청 취소하기"
                             (click)="unfollow()" *ngIf="relationship.requested">
                             <fa-icon [icon]="faHourglassHalf"></fa-icon>
                         </a>
@@ -47,11 +47,11 @@
         <app-waiting-animation *ngIf="isLoading" class="waiting-icon"></app-waiting-animation>
 
         <div *ngIf="!isLoading && !displayedAccount" class="profile__not-found">
-            account couldn't be found.
+            계정을 찾을 수 없습니다.
         </div>
 
         <div class="profile__moved" *ngIf="displayedAccount && displayedAccount.moved">
-            <span innerHTML="{{displayedAccount | accountEmoji }}"></span> has moved to <br /><a href
+            <span innerHTML="{{displayedAccount | accountEmoji }}"></span> 님은 다음 계정으로 이사했습니다 <br /><a href
                 (click)="openMigratedAccount(displayedAccount.moved)" class="profile__moved--link"
                 title="open @{{displayedAccount.moved.acct }}">@{{displayedAccount.moved.acct }}</a>
         </div>
@@ -59,7 +59,7 @@
         <div *ngIf="displayedAccount" class="profile-header"
             [ngStyle]="{'background-image':'url('+displayedAccount.header+')'}">
             <div class="profile-header__inner">
-                <a href (click)="showAvatar(displayedAccount.avatar)" (auxclick)="openAccount()" title="open avatar">
+                <a href (click)="showAvatar(displayedAccount.avatar)" (auxclick)="openAccount()" title="프로필 사진 보이기">
                     <img class="profile-header__avatar" [class.profile__disabled]="displayedAccount.moved"
                         src="{{displayedAccount.avatar}}" alt="header" />
                 </a>
@@ -74,33 +74,33 @@
                     </app-waiting-animation>
 
                     <div *ngIf="!loadingRelationShip && !relationShipError">
-                        <a href class="profile-header__follow--button profile-header__follow--unfollowed" title="follow"
+                        <a href class="profile-header__follow--button profile-header__follow--unfollowed" title="이 계정을 팔로우"
                             (click)="follow()" *ngIf="!relationship.following && !relationship.requested">
                             <fa-icon [icon]="faUserRegular"></fa-icon>
                         </a>
-                        <a href class="profile-header__follow--button profile-header__follow--followed" title="unfollow"
+                        <a href class="profile-header__follow--button profile-header__follow--followed" title="이 계정을 팔로우 해제"
                             (click)="unfollow()" *ngIf="relationship.following">
                             <fa-icon [icon]="faUserCheck"></fa-icon>
                         </a>
-                        <a href class="profile-header__follow--button profile-header__follow--followed" title="pending"
+                        <a href class="profile-header__follow--button profile-header__follow--followed" title="팔로우 요청 취소하기"
                             (click)="unfollow()" *ngIf="relationship.requested">
                             <fa-icon [icon]="faHourglassHalf"></fa-icon>
                         </a>
                     </div>
                     <div *ngIf="!loadingRelationShip && relationShipError">
-                        <a class="profile-header__follow--button profile-header__follow--followed" title="error when retrieving relationship">
+                        <a class="profile-header__follow--button profile-header__follow--followed" title="팔로워 관계를 불러오지 못함">
                             <fa-icon [icon]="faExclamationTriangle"></fa-icon>
                         </a>
                     </div>
                 </div>
                 <div class="profile-header__state"
                     *ngIf="relationship && !displayedAccount.moved && !loadingRelationShip">
-                    <div class="profile-header__state--data" *ngIf="relationship.followed_by">follows you</div>
-                    <div class="profile-header__state--data" *ngIf="relationship.blocking">blocked</div>
-                    <div class="profile-header__state--data" *ngIf="relationship.blocked_by">blocks you</div>
-                    <div class="profile-header__state--data" *ngIf="relationship.domain_blocking">domain blocked</div>
-                    <div class="profile-header__state--data" *ngIf="relationship.muting">muted</div>
-                    <div class="profile-header__state--data" *ngIf="relationship.endorsed">endorsed</div>
+                    <div class="profile-header__state--data" *ngIf="relationship.followed_by">당신을 팔로우합니다</div>
+                    <div class="profile-header__state--data" *ngIf="relationship.blocking">차단함</div>
+                    <div class="profile-header__state--data" *ngIf="relationship.blocked_by">당신을 차단함</div>
+                    <div class="profile-header__state--data" *ngIf="relationship.domain_blocking">도메인 차단됨</div>
+                    <div class="profile-header__state--data" *ngIf="relationship.muting">뮤트함</div>
+                    <div class="profile-header__state--data" *ngIf="relationship.endorsed">팔로우 승인 대기중</div>
                     <!-- <div class="profile-header__state--data" *ngIf="relationship.muting_notifications">notifications
                         muted
                     </div> -->
@@ -118,12 +118,12 @@
                     <h2 class="profile-name__link profile-name__display-name"
                         innerHTML="{{displayedAccount | accountEmoji }}" title="{{displayedAccount.display_name}}"></h2>
                     <h2 class="profile-name__link profile-name__fullhandle"><a href="{{displayedAccount.url}}"
-                            target="_blank" title="{{displayedAccount.acct}}">@{{displayedAccount.acct}}</a> <fa-icon class="fa-lock" *ngIf="displayedAccount.locked" [icon]="faLock" title="account locked"></fa-icon></h2> 
+                            target="_blank" title="{{displayedAccount.acct}}">@{{displayedAccount.acct}}</a> <fa-icon class="fa-lock" *ngIf="displayedAccount.locked" [icon]="faLock" title="팔로우 승인제"></fa-icon></h2> 
                 </div>
 
                 <div class="profile-follows">
-                    <a href class="profile-follows__link" title="show following" (click)="browseFollows()" >Following</a>
-                    <a href class="profile-follows__link" title="show followers" (click)="browseFollowers()">Followers</a>
+                    <a href class="profile-follows__link" title="팔로잉 더보기" (click)="browseFollows()" >팔로잉</a>
+                    <a href class="profile-follows__link" title="팔로워 더보기" (click)="browseFollowers()">팔로워워</a>
                 </div>
 
                 <!-- <div class="profile__extra-info">
@@ -165,18 +165,18 @@
             <div class="profile__extra-info profile__extra-info__preparefloating" *ngIf="!isLoading"
                 [class.profile__extra-info__floating]="showFloatingStatusMenu">
                 <div class="profile__extra-info__section">
-                    <a href class="profile__extra-info__links" (click)="switchStatusSection('status')" title="Status"
-                        [class.profile__extra-info__links--selected]="statusSection === 'status'">Status</a>
+                    <a href class="profile__extra-info__links" (click)="switchStatusSection('status')" title="게시물"
+                        [class.profile__extra-info__links--selected]="statusSection === 'status'">게시물</a>
                 </div>
                 <div class="profile__extra-info__section">
                     <a href class="profile__extra-info__links" (click)="switchStatusSection('replies')"
-                        title="Status & Replies"
-                        [class.profile__extra-info__links--selected]="statusSection === 'replies'">Status &
-                        Replies</a>
+                        title="게시물 & 답글"
+                        [class.profile__extra-info__links--selected]="statusSection === 'replies'">게시물 &
+                        답글</a>
                 </div>
                 <div class="profile__extra-info__section">
-                    <a href class="profile__extra-info__links" (click)="switchStatusSection('media')" title="Media"
-                        [class.profile__extra-info__links--selected]="statusSection === 'media'">Media</a>
+                    <a href class="profile__extra-info__links" (click)="switchStatusSection('media')" title="미디어"
+                        [class.profile__extra-info__links--selected]="statusSection === 'media'">미디어</a>
                 </div>
             </div>
 
@@ -184,24 +184,24 @@
                 <div class="profile__extra-info" *ngIf="!isLoading">
                     <div class="profile__extra-info__section">
                         <a href class="profile__extra-info__links" (click)="switchStatusSection('status')"
-                            title="Status"
+                            title="게시물"
                             [class.profile__extra-info__links--selected]="statusSection === 'status'">Status</a>
                     </div>
                     <div class="profile__extra-info__section">
                         <a href class="profile__extra-info__links" (click)="switchStatusSection('replies')"
-                            title="Status & Replies"
-                            [class.profile__extra-info__links--selected]="statusSection === 'replies'">Status &
-                            Replies</a>
+                            title="게시물 & 답글"
+                            [class.profile__extra-info__links--selected]="statusSection === 'replies'">게시물 &
+                            답글</a>
                     </div>
                     <div class="profile__extra-info__section">
-                        <a href class="profile__extra-info__links" (click)="switchStatusSection('media')" title="Media"
-                            [class.profile__extra-info__links--selected]="statusSection === 'media'">Media</a>
+                        <a href class="profile__extra-info__links" (click)="switchStatusSection('media')" title="미디어"
+                            [class.profile__extra-info__links--selected]="statusSection === 'media'">미디어</a>
                     </div>
                 </div>
 
                 <div [class.profile__status-switching-section]="isSwitchingSection">
                     <div *ngIf="!isLoading && !statusLoading && statuses.length == 0" class="profile-no-toots">
-                        no status found
+                        게시물이 없습니다
                     </div>
 
                     <div *ngIf="statusSection === 'status' && !statusLoading">

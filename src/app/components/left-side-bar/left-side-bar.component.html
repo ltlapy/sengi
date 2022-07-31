@@ -1,9 +1,9 @@
 <div class="left-bar">
-    <a class="left-bar-button left-bar-button--status left-bar-link" href title="write new message"
+    <a class="left-bar-button left-bar-button--status left-bar-link" href title="새 게시물 작성"
         (click)="createNewStatus()" (contextmenu)="createNewStatus()" *ngIf="hasAccounts">
         <fa-icon [icon]="faCommentAlt"></fa-icon>
     </a>
-    <a class="left-bar-button left-bar-button--search left-bar-link" href title="search" (click)="openSearch()"
+    <a class="left-bar-button left-bar-button--search left-bar-link" href title="검색" (click)="openSearch()"
         (contextmenu)="openSearch()" *ngIf="hasAccounts">
         <fa-icon [icon]="faSearch"></fa-icon>
     </a>
@@ -15,19 +15,19 @@
     </div>
 
     <a class="left-bar-button left-bar-button--add left-bar-link" [ngClass]="{'no-accounts': hasAccounts === false }"
-        href title="add new account" (click)="addNewAccount()" (contextmenu)="addNewAccount()">
+        href title="새 계정 추가" (click)="addNewAccount()" (contextmenu)="addNewAccount()">
         <fa-icon [icon]="faPlus"></fa-icon>
     </a>
 
 
-    <a class="left-bar-button left-bar-button--scheduled left-bar-button--bottom left-bar-link" href title="scheduled statuses" 
+    <a class="left-bar-button left-bar-button--scheduled left-bar-button--bottom left-bar-link" href title="예약된 게시물" 
         *ngIf="hasAccounts && hasScheduledStatuses"
         (click)="openScheduledStatuses()"
         (contextmenu)="openScheduledStatuses()">
         <fa-icon [icon]="faCalendarAlt"></fa-icon>
     </a>
 
-    <a class="left-bar-button left-bar-button--cog left-bar-button--bottom left-bar-link" href title="settings" (click)="openSettings()"
+    <a class="left-bar-button left-bar-button--cog left-bar-button--bottom left-bar-link" href title="설정" (click)="openSettings()"
         (contextmenu)="openSettings()">
         <fa-icon [icon]="faCog"></fa-icon>
     </a>

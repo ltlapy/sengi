@@ -14,13 +14,13 @@
     <div *ngIf="card.type === 'video'" class="card-data__video">
         <div *ngIf="!showHtml" class="card-data__video--preview">
             <div class="card-data__video--preview--controls">
-                <a href class="card-data__video--preview--link" (click)="play()" title="play">
+                <a href class="card-data__video--preview--link" (click)="play()" title="재생">
                     <fa-icon [icon]="faPlay"></fa-icon>
                 </a>
-                <a href class="card-data__video--preview--link" (click)="expand()" title="open">
+                <a href class="card-data__video--preview--link" (click)="expand()" title="열기">
                     <fa-icon [icon]="faExpand"></fa-icon>
                 </a>
-                <a href="{{ card.url }}" class="card-data__video--preview--link" target="_blank" title="browse">
+                <a href="{{ card.url }}" class="card-data__video--preview--link" target="_blank" title="이동하기">
                     <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
                 </a>
             </div>

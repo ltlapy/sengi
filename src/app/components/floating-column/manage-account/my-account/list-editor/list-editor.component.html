@@ -1,5 +1,5 @@
 <div class="list-editor">
-    <a href class="list-editor__close-search" title="close search" *ngIf="searchOpen" (click)="closeSearch()">
+    <a href class="list-editor__close-search" title="검색 닫기" *ngIf="searchOpen" (click)="closeSearch()">
         <fa-icon [icon]="faTimes"></fa-icon>
     </a>
     <input class="list-editor__search" placeholder="search account" [(ngModel)]="searchPattern"
