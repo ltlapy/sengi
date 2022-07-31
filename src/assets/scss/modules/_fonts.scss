@@ -1,3 +1,132 @@
+/*
+Copyright (c) 2022 Kil Hyung-jin, with Reserved Font Name Pretendard JP.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+	font-family: 'Pretendard JP';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard JP Black'), url('assets/fonts/Black/PretendardJP-Black.woff2') format('woff2'), url('assets/fonts/Black/PretendardJP-Black.woff') format('woff');
+}
+
+// @font-face {
+// 	font-family: 'Pretendard JP';
+// 	font-weight: 800;
+// 	font-display: swap;
+// 	src: local('Pretendard JP ExtraBold'), url('assets/fonts/ExtraBold/PretendardJP-ExtraBold.woff2') format('woff2'), url('assets/fonts/ExtraBold/PretendardJP-ExtraBold.woff') format('woff');
+// }
+
+@font-face {
+	font-family: 'Pretendard JP';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard JP Bold'), url('assets/fonts/Bold/PretendardJP-Bold.woff2') format('woff2'), url('assets/fonts/Bold/PretendardJP-Bold.woff') format('woff');
+}
+
+// @font-face {
+// 	font-family: 'Pretendard JP';
+// 	font-weight: 600;
+// 	font-display: swap;
+// 	src: local('Pretendard JP SemiBold'), url('assets/fonts/SemiBold/PretendardJP-SemiBold.woff2') format('woff2'), url('assets/fonts/SemiBold/PretendardJP-SemiBold.woff') format('woff');
+// }
+
+@font-face {
+	font-family: 'Pretendard JP';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard JP Medium'), url('assets/fonts/Medium/PretendardJP-Medium.woff2') format('woff2'), url('assets/fonts/Medium/PretendardJP-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard JP';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard JP Regular'), url('assets/fonts/Regular/PretendardJP-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard JP';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard JP Light'), url('assets/fonts/Light/PretendardJP-Light.woff2') format('woff2'), url('assets/fonts/Light/PretendardJP-Light.woff') format('woff');
+}
+
+// @font-face {
+// 	font-family: 'Pretendard JP';
+// 	font-weight: 200;
+// 	font-display: swap;
+// 	src: local('Pretendard JP ExtraLight'), url('assets/fonts/ExtraLight/PretendardJP-ExtraLight.woff2') format('woff2'), url('assets/fonts/ExtraLight/PretendardJP-ExtraLight.woff') format('woff');
+// }
+
+@font-face {
+	font-family: 'Pretendard JP';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard JP Thin'), url('assets/fonts/Thin/PretendardJP-Thin.woff2') format('woff2'), url('assets/fonts/Thin/PretendardJP-Thin.woff') format('woff');
+}
+
+/* noto-sans-sc-100 - latin_chinese-simplified */
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Noto Sans SC'),
+		 url('assets/fonts/Thin/NotoSansSC-100.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('assets/fonts/Thin/NotoSansSC-100.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-300 - latin_chinese-simplified */
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Noto Sans SC'),
+		 url('assets/fonts/Light/NotoSansSC-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('assets/fonts/Light/NotoSansSC-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-regular - latin_chinese-simplified */
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans SC'),
+		 url('assets/fonts/Regular/NotoSansSC-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('assets/fonts/Regular/NotoSansSC-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-sc-500 - latin_chinese-simplified */
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans SC'),
+		 url('assets/fonts/Medium/NotoSansSC-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('assets/fonts/Medium/NotoSansSC-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* noto-sans-sc-700 - latin_chinese-simplified */
+  @font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Noto Sans SC'),
+		 url('assets/fonts/Bold/NotoSansSC-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('assets/fonts/Bold/NotoSansSC-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* noto-sans-sc-900 - latin_chinese-simplified */
+  @font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Noto Sans SC'),
+		 url('assets/fonts/Black/NotoSansSC-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('assets/fonts/Black/NotoSansSC-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+
+/** Roboto **/
 @font-face {
     font-family: 'Roboto';
     src: url('assets/fonts/Regular/Roboto-Regular.woff2') format('woff2'),

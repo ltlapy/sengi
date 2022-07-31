@@ -14,6 +14,7 @@ It is released as a **browser webapp** and also packaged as an **cross-platform 
 
 ### What's different from original
 - [x] Translate UI to Korean
+- [x] Use PretendardJP and NotoSansSC as Default UI Font
 
 ### TODO
 - [ ] Multilanguage support
